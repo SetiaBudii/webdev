@@ -1,0 +1,70 @@
+table {
+    width: 100%;
+    height: 720px;
+    border-spacing: 0;
+    font-size: 50px;
+    font-family: Calibri;
+    border: 2px solid black;
+}
+
+tr {
+    text-align: center;
+    height: 50px;
+    border: 2px solid black;
+}
+
+td{
+    border: 2px solid black;
+}
+
+.biru-tua {
+    background-color: #0070c0;
+}
+
+.hitam {
+    background-color: #000000;
+}
+
+.putih {
+    background-color: #ffffff;
+}
+
+.coklat {
+    background-color: #806000;
+}
+
+.pink {
+    background-color: #ff99ff;
+}
+
+.biru {
+    background-color: #00b0f0;
+}
+
+.kuning {
+    background-color: #ffff00;
+}
+
+.merah {
+    background-color: #ff0000;
+}
+
+.ungu {
+    background-color: #7030a0;
+}
+
+.hijau {
+    background-color: #00b050;
+}
+
+.oren {
+    background-color: #ffc000;
+}
+
+.abu {
+    background-color: #a6a6a6;
+}
+
+.text-white{
+    color: white;
+}
