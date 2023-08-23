@@ -1,0 +1,85 @@
+.BiruTua { 
+    grid-area: birutua;
+    background-color: darkblue;
+  }
+  
+  .Hitam { grid-area: hitam; 
+    background-color: black;
+    color: white;
+  }
+  
+  .Coklat { 
+    grid-area: coklat; 
+    background-color: chocolate;
+  }
+  
+  .Putih { 
+    grid-area: putih; 
+    background-color: white;
+  }
+  
+  .Pink { 
+    grid-area: pinkk; 
+    background-color: pink;
+  }
+  
+  .Biru { 
+    grid-area: biru; 
+    background-color: blue;
+  }
+  
+  .Ungu {
+     grid-area: ungu; 
+     background-color: purple;
+  }
+  
+  .Kuning { 
+    grid-area: kuning; 
+    background-color: yellow;
+  }
+  .Merah { 
+    grid-area: merah;
+    background-color: red; 
+  }
+  
+  .Hijau { 
+    grid-area: hijau; 
+    background-color: green;
+  }
+  .Orange { 
+    grid-area: oren;
+    background-color: orange; }
+  
+  .Abu { 
+    grid-area: abu; 
+    background-color: gray;
+  }
+  
+  
+  .grid-container {
+    display: grid;
+    grid-auto-rows: minmax(90px, auto);
+    grid-template-areas:
+    'birutua birutua hitam hitam hitam hitam'
+    'birutua birutua coklat coklat putih pinkk'
+    'birutua birutua coklat coklat putih biru'
+    'kuning kuning ungu ungu putih biru'
+    'merah merah ungu ungu abu abu'
+    'hijau hijau oren oren abu abu'
+  }
+  
+  .grid-container > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    font-size: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+  }
+  
+  .warnaputih{
+    color: white;
+  }
+  
+  
+  
