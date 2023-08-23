@@ -1,6 +1,6 @@
 .BiruTua { 
     grid-area: birutua;
-    background-color: darkblue;
+    background-color: #0070c0;
   }
   
   .Hitam { grid-area: hitam; 
@@ -10,7 +10,7 @@
   
   .Coklat { 
     grid-area: coklat; 
-    background-color: chocolate;
+    background-color: #806000;
   }
   
   .Putih { 
@@ -20,17 +20,17 @@
   
   .Pink { 
     grid-area: pinkk; 
-    background-color: pink;
+    background-color: #ff99ff;
   }
   
   .Biru { 
     grid-area: biru; 
-    background-color: blue;
+    background-color: #00b0f0;
   }
   
   .Ungu {
      grid-area: ungu; 
-     background-color: purple;
+     background-color: #7030a0;
   }
   
   .Kuning { 
@@ -44,15 +44,16 @@
   
   .Hijau { 
     grid-area: hijau; 
-    background-color: green;
+    background-color: #00b050;
   }
   .Orange { 
     grid-area: oren;
-    background-color: orange; }
+    background-color: #ffc000; 
+}
   
   .Abu { 
     grid-area: abu; 
-    background-color: gray;
+    background-color: #a6a6a6;
   }
   
   
