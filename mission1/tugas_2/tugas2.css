@@ -7,9 +7,6 @@
     width: 200px;
     padding-top: 0;
 }
-.navbar{
-    font-family: sans-serif;
-}
 
 .bg-navbar{
     background-color: #f3f4f6;
@@ -66,10 +63,6 @@ body{
 }
 .image-1{
     height: 80px;
-}
-
-.container-main{
-    height: 1000px;
 }
 
 a { 
