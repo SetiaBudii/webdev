@@ -1,0 +1,32 @@
+[
+    {
+        "id": "1",
+        "name":"Iphone 14",
+        "harga": 20000
+    },
+    {
+        "id": "2",
+        "name":"Redmi Note 12",
+        "harga": 1500
+    },
+    {
+        "id": "3",
+        "name":"Samsung Fold",
+        "harga": 22000
+    },
+    {
+        "id": "4",
+        "name":"Apple Watch",
+        "harga": 7000
+    },
+    {
+        "id": "5",
+        "name":"Mi Pad",
+        "harga": 2000
+    },
+    {
+        "id": "6",
+        "name":"Ipad",
+        "harga": 12000
+    }
+]

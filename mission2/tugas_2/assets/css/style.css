@@ -1,0 +1,19 @@
+html,body {
+    height: 100%;
+}
+
+input{
+    height:34px;
+    width: 100px;
+    text-align: center;
+    font-size: 26px;
+    border:1px solid #ddd;
+    border-radius:4px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+img{
+    width: 200px;
+    height: 200px;
+}
