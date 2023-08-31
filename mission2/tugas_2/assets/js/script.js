@@ -1,3 +1,6 @@
+let total = 0
+let datanya
+
 function tambah(id) {
   const inputElement = document.querySelector(`#item-${id} input`);
   var i = inputElement.getAttribute('value');
@@ -14,21 +17,28 @@ function hapus(id) {
   }
 }
 
-function tambahbarang(clickedButton) {
-  const parentElement = clickedButton.parentElement;
+function tambahbarang(id) {
+      let myData;
+      myData = datanya;
+      
+      const inputElement = document.querySelector(`#item-${id} input`);
+      var i = inputElement.getAttribute('value') ;
 
-  const items = [
-    { nama: "Iphone 12", harga: 15000 },
-    { nama: "Iphone 14", harga: 30000 }
-  ];
+      let htmlContent = ''; 
+      const x = document.getElementById('chart');
+      id = id - 1;
+      total += myData[id].harga * i;
 
-  const inputElement = parentElement.querySelector('input');
+      htmlContent += `<p>${myData[id].name}</p>
+      <p>${myData[id].harga}  X  ${i}</p>
+      <p>Rp.${myData[id].harga * i}</p>`;
 
-  // Retrieve the value of the <input> element
-  const inputValue = inputElement.value;
+      x.innerHTML += htmlContent;
+      inputElement.setAttribute('value', 0);
 
-  var x = document.getElementById('barang')
-  x.innerHTML = `<p> ${items[inputValue].nama} </p>`;
+      const totalHarga = document.getElementById('total');
+      totalHarga.innerHTML = total;
+
 }
 
 
@@ -41,6 +51,7 @@ function listbarang() {
     .then((data) => {
       // Save the JSON data to a variable
       myData = data;
+      datanya = data;
 
       // Process the data and build the HTML
       const x = document.getElementById('list');
@@ -48,7 +59,7 @@ function listbarang() {
 
       for (var i = 0; i < myData.length; i++) {
         htmlContent += `<div class="col">
-                            <div class="card p-3" style="width: 18rem;">
+                            <div class="card mb-3 border border-dark" style="width: 250px;">
                                 <img class="card-img-top" src="assets/img/item-${i + 1}.jpg" alt="Card image cap">
                                 <div class="card-body" id="item-${i + 1}">
                                   <h5 class="card-title">${myData[i].name}</h5>
@@ -56,13 +67,12 @@ function listbarang() {
                                   <button onclick="hapus(${myData[i].id})">-</button>
                                   <input type="text" id="incDec" value="0">
                                   <button onclick="tambah(${myData[i].id})">+</button>
-                                  <button class="btn btn-success m-2" onclick="tambahbarang()">Tambah Barang</button>
+                                  <button class="btn btn-success m-2" onclick="tambahbarang(${myData[i].id})">Tambah Barang</button>
                                 </div>
                              </div>
                         </div>`;
       }
 
-      // Set the accumulated HTML content to the 'x' element
       x.innerHTML = htmlContent;
     })
     .catch((error) => {
