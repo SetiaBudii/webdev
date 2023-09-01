@@ -75,14 +75,14 @@ function listbarang() {
 
       for (var i = 0; i < myData.length; i++) {
         htmlContent += `<div class="col">
-                            <div class="card mb-3 border p-2" style="width: 250px;">
+                            <div class="card mb-3 border border-dark p-2 shadow" style="width: 250px;">
                                 <img class="card-img-top" src="assets/img/item-${i + 1}.jpg" alt="Card image cap">
                                 <div class="card-body text-center" id="item-${i + 1}">
                                   <h5 class="card-title">${myData[i].name}</h5>
                                   <p class="card-text">${formatIDR(myData[i].harga)}</p>
-                                  <button onclick="hapus(${myData[i].id})">-</button>
+                                  <button class="btn-qty-del" onclick="hapus(${myData[i].id})"><p>-</p></button>
                                   <input type="text" id="incDec" value="0">
-                                  <button onclick="tambah(${myData[i].id})">+</button>
+                                  <button class="btn-qty-add" onclick="tambah(${myData[i].id})"><p>+</p></button>
                                   <button class="btn btn-success m-2" onclick="tambahbarang(${myData[i].id})">Tambah Barang</button>
                                 </div>
                              </div>

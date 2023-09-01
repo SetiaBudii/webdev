@@ -7,10 +7,44 @@ input{
     width: 100px;
     text-align: center;
     font-size: 26px;
-    border:1px solid #ddd;
+    border:1px solid #000000;
     border-radius:4px;
     display: inline-block;
     vertical-align: middle;
+}
+
+.btn-qty-add{
+    height:34px;
+    width: 30px;
+    text-align: center;
+    font-size: 26px;
+    padding-bottom: 10px;
+    border:1px solid #000000;
+    border-radius:10px;
+    display: inline-block;
+    vertical-align:top;
+    background-color:aquamarine;
+}
+
+.btn-qty-add p{
+  margin-top: -7px;
+}
+
+.btn-qty-del{
+  height:34px;
+  width: 30px;
+  text-align: center;
+  font-size: 26px;
+  padding-bottom: 10px;
+  border:1px solid #000000;
+  border-radius:10px;
+  display: inline-block;
+  vertical-align:top;
+  background-color:rgb(255, 196, 196);
+}
+
+.btn-qty-del p{
+margin-top: -7px;
 }
 
 img{
@@ -37,7 +71,7 @@ img{
     position: fixed;
     top: 0;
     right: 0;
-    background-color: #f0f0f0;
+    background-color: #ffffff;
     overflow-y: scroll;
   }
   
@@ -56,4 +90,8 @@ img{
     font-family: Arial;
   }
 
+  .icon{
+    width: 50px;
+    height: 50px;
+  }
  
