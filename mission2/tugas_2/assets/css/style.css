@@ -18,7 +18,42 @@ img{
     height: 200px;
 }
 
-.chartBox{
-position: sticky;
-overflow:scroll;
-}
+/* Hide scrollbars, but keep scrolling functionality */
+::-webkit-scrollbar {
+    width: 0.1rem;
+    height: 0.1rem;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+
+.fixed-content {
+    height: 100vh; /* Set fixed height to fill half of the viewport */
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #f0f0f0;
+    overflow-y: scroll;
+  }
+  
+  .scrollable-content {
+    height: 100vh; /* Set fixed height to fill half of the viewport */
+    overflow-y: scroll; /* Enable vertical scrolling if content overflows */
+  }
+
+  .mychart{
+    font-size: 25px;
+    font-family: Arial;
+  }
+
+  .listchart{
+    font-size: 15px;
+    font-family: Arial;
+  }
+
+ 

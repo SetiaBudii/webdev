@@ -29,15 +29,25 @@ function tambahbarang(id) {
       id = id - 1;
       total += myData[id].harga * i;
 
-      htmlContent += `<p>${myData[id].name}</p>
-      <p>${myData[id].harga}  X  ${i}</p>
-      <p>Rp.${myData[id].harga * i}</p>`;
+      htmlContent += `
+      <div class="row listchart">
+        <div class="col-6 ">
+          <p class="m-0">${myData[id].name}</p>
+          <p>${formatIDR(myData[id].harga)}  X  ${i}</p>
+        </div>
+        <div class="col-6 d-flex align-items-center justify-content-end ">
+          <p>${formatIDR(myData[id].harga * i)}</p>
+        </div>
+      </div>
+      `;
+
+      // <p>${formatIDR(myData[id].harga * i)}</p>
 
       x.innerHTML += htmlContent;
       inputElement.setAttribute('value', 0);
 
-      const totalHarga = document.getElementById('total');
-      totalHarga.innerHTML = total;
+      const totalHarga = document.getElementById('totalharga');
+      totalHarga.innerHTML = formatIDR(total);
 
 }
 
@@ -58,8 +68,8 @@ function listbarang() {
       let htmlContent = ''; // Accumulate the HTML content here
 
       for (var i = 0; i < myData.length; i++) {
-        htmlContent += `<div class="col">
-                            <div class="card mb-3 border border-dark" style="width: 250px;">
+        htmlContent += `<div class="col scroll-product">
+                            <div class="card mb-3 border" style="width: 250px;">
                                 <img class="card-img-top" src="assets/img/item-${i + 1}.jpg" alt="Card image cap">
                                 <div class="card-body" id="item-${i + 1}">
                                   <h5 class="card-title">${myData[i].name}</h5>
@@ -86,3 +96,16 @@ function checkQuantityMinus(quantity) {
   }
   return false;
 }
+
+
+function formatIDR(number) {
+  if (!Number.isInteger(number) || number < 0) {
+    return "Invalid input";
+  }
+
+  const formattedNumber = number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  
+  // Add "IDR" symbol and return the formatted string
+  return `Rp. ${formattedNumber}`;
+}
+
