@@ -101,7 +101,7 @@ function listbarang() {
                                   <h5 class="card-title">${myData[i].name}</h5>
                                   <p class="card-text">${formatIDR(myData[i].harga)}</p>
                                   <button class="btn-qty-del" onclick="hapus(${myData[i].id})"><p>-</p></button>
-                                  <input type="text" id="incDec" value="0">
+                                  <input type="text" id="incDec" value="0" disabled>
                                   <button class="btn-qty-add" onclick="tambah(${myData[i].id})"><p>+</p></button>
                                   <button class="btn btn-success m-2" onclick="tambahbarang(${myData[i].id})">Tambah Barang</button>
                                 </div>
