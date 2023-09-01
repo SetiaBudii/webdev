@@ -49,6 +49,12 @@ function tambahbarang(id) {
       const totalHarga = document.getElementById('totalharga');
       totalHarga.innerHTML = formatIDR(total);
 
+      const totalPajak = document.getElementById('totalpajak');
+      totalPajak.innerHTML = formatIDR(total * 0.11);
+
+      const totalBayar = document.getElementById('totalfinal');
+      totalBayar.innerHTML = formatIDR(total + (total * 0.11));
+
 }
 
 
@@ -68,12 +74,12 @@ function listbarang() {
       let htmlContent = ''; // Accumulate the HTML content here
 
       for (var i = 0; i < myData.length; i++) {
-        htmlContent += `<div class="col scroll-product">
-                            <div class="card mb-3 border" style="width: 250px;">
+        htmlContent += `<div class="col">
+                            <div class="card mb-3 border p-2" style="width: 250px;">
                                 <img class="card-img-top" src="assets/img/item-${i + 1}.jpg" alt="Card image cap">
-                                <div class="card-body" id="item-${i + 1}">
+                                <div class="card-body text-center" id="item-${i + 1}">
                                   <h5 class="card-title">${myData[i].name}</h5>
-                                  <p class="card-text">${myData[i].harga}</p>
+                                  <p class="card-text">${formatIDR(myData[i].harga)}</p>
                                   <button onclick="hapus(${myData[i].id})">-</button>
                                   <input type="text" id="incDec" value="0">
                                   <button onclick="tambah(${myData[i].id})">+</button>
