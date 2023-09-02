@@ -62,14 +62,14 @@ function checkCollision() {
   
     if (!gameIsOver) {
       score++;
-      runKM.innerHTML = score;
+      runKM.innerHTML = score + " meter meng berjalan!";
       requestAnimationFrame(checkCollision);
     }
   }
   
 function showGameOverMessage() {
     // Display a game over message or perform any other game over actions
-    alert("Game Over!");
+    alert("Yahhh si meng nabrak!");
   }
   
   function resetGame() {
@@ -93,6 +93,18 @@ function showGameOverMessage() {
 
   function randomHeightObstacle(){
     obstacle.style.height = Math.floor(Math.random() * (180 - 50 + 1) + 50) + "px";
+    obstacle.style.backgroundColor = getRandomColor();
+  }
+
+  function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+  
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+  
+    return color;
   }
 
   setInterval(randomHeightObstacle, 2000);
