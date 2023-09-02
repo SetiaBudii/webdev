@@ -44,6 +44,32 @@
     left: 400px; /* Adjust the position as needed */
   }
 
+.player-svg{
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    bottom: 45px;
+    left: 45px; 
+    background-color: blanchedalmond;
+}
+
+.obstacle-svg{
+    position: absolute;
+    width: 50px;
+    bottom: 45px;
+    background-color: black;
+    animation: gerak 2s infinite linear;
+}
+
+@keyframes gerak {
+    0% {
+        left: 1200px;
+      }
+      100% {
+        left: -50px;    
+      }
+    }
+
   
 /* button {
     padding: 10px 20px;
