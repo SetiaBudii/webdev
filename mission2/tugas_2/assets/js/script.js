@@ -34,7 +34,7 @@ function jump(){
 }
 
 function control(e){
-    if (e.key == "38" || e.key == " "){
+    if (e.key == "ArrowUp" || e.key == " "){
         jump();
     }
 }
@@ -43,26 +43,33 @@ document.addEventListener("keydown", control);
 
 let obstacle = document.getElementById("obstacle");
 let obstacleLeft = parseInt(window.getComputedStyle(obstacle).getPropertyValue("left"));
+let obstacleTop = parseInt(window.getComputedStyle(obstacle).getPropertyValue("top"));
+let obstacleHeight = parseInt(window.getComputedStyle(obstacle).getPropertyValue("height"));
 let obstacleSpeed = 5; // Adjust the speed as needed
 let score = 0;
 
 function moveObstacle() {
   obstacleLeft -= obstacleSpeed;
   obstacle.style.left = obstacleLeft + "px";
-  console.log(obstacleLeft);
-  if(obstacleLeft <= playerLeft+playerWidth-10 &&playerBottom <= 60){
+  console.log("leftObs : ", obstacleLeft);
+  console.log("PlayerBot: ", playerBottom);
+  console.log("garistepiatas: ", 50+obstacleHeight);
+  const x = document.getElementById("obsBottom");
+  x.innerHTML = obstacleLeft-50;
+  if( (obstacleLeft <= playerLeft+playerWidth && obstacleLeft > playerLeft && playerBottom <= 50 ) || (obstacleLeft <= playerLeft+playerWidth && obstacleLeft > playerLeft && playerBottom <= (obstacleHeight+50))){
     alert("Game Over");
     playerBottom = posisi[0];
     playerRight = posisi[1];
     playerWidth = posisi[2];
     playerLeft = posisi[3];
-    obstacleLeft = window.innerWidth;    
+    obstacleLeft = window.innerWidth;
   }
   // Check if the obstacle is out of the screen
   if (obstacleLeft < -50) {
     // Reset the obstacle position when it goes off-screen
     obstacleLeft = window.innerWidth;
     obstacle.style.left = obstacleLeft + "px";
+    obstacle.style.height = Math.floor(Math.random() * 100) + "px";
   }
 }
 
