@@ -23,7 +23,7 @@ body {
     border: black solid 2px;
     position: relative;
     background-color: skyblue;
-    margin: 100px auto;
+    margin: 50px auto;
     padding:0;
     box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
 }
@@ -88,8 +88,7 @@ body {
         justify-content: center;
         text-align: center;
         align-items: center;
-        margin-top: 50px;
-        margin-bottom: 0;
+        margin-top: 10px;
     }
 
     .judul h1{
