@@ -1,6 +1,7 @@
 let player = document.querySelector(".player-svg");
+let ground = document.querySelector(".ground")
 let playerBottom = parseInt(window.getComputedStyle(player).getPropertyValue("bottom"));
-let gameIsOver = false;
+let groundHeight = parseInt(window.getComputedStyle(ground).getPropertyValue("height"));
 let isJumping = false;
 let upTime;
 let downTime;
@@ -12,12 +13,14 @@ let initialCatPosition = initialPlayerValue();
 function jump(){
     if (isJumping) return;
     upTime = setInterval(() => {
-        if (playerBottom > 50 + 200){
+        if (playerBottom > groundHeight + 200){
             clearInterval(upTime);
             downTime = setInterval(() => {
                 if (playerBottom <= 60 ){
                     clearInterval(downTime);
                     isJumping = false;
+                    score += 1;
+                    runKM.innerText = score; 
                 }
                 playerBottom -= 10;
                 player.style.bottom = playerBottom  + "px";
@@ -39,47 +42,8 @@ function control(e){
 
 let obstacle = document.querySelector(".obstacle-svg");
 
-function isCollision(rect1, rect2) {
-    const rect1Box = rect1.getBoundingClientRect();
-    const rect2Box = rect2.getBoundingClientRect();
-    
-    return (
-      rect1Box.left < rect2Box.right &&
-      rect1Box.right > rect2Box.left &&
-      rect1Box.top < rect2Box.bottom &&
-      rect1Box.bottom > rect2Box.top
-    );
-  }
-
 document.addEventListener("keydown", control); 
 
-function checkCollision() {
-    if (isCollision(player, obstacle) && !gameIsOver) {
-      gameIsOver = true;
-      showGameOverMessage();
-      resetGame();
-    }
-  
-    if (!gameIsOver) {
-      score++;
-      runKM.innerHTML = score + " meter meng berjalan!";
-      requestAnimationFrame(checkCollision);
-    }
-  }
-  
-function showGameOverMessage() {
-    // Display a game over message or perform any other game over actions
-    alert("Yahhh si meng nabrak!");
-  }
-  
-  function resetGame() {
-    player.style.bottom = initialCatPosition[1] + "px";
-    player.style.left = initialCatPosition[0] + "px";
-    gameIsOver = false;
-    score = 0;
-    obstacle.style.height =50 + "px";
-  }
-  
   function initialPlayerValue(){
     let position =[]
     let player = document.querySelector(".player-svg");
@@ -110,5 +74,3 @@ function showGameOverMessage() {
   setInterval(randomHeightObstacle, 2000);
   document.addEventListener("keydown", control);
   
-  // Start the collision detection loop
-  requestAnimationFrame(checkCollision);
