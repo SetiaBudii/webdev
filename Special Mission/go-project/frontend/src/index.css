@@ -1,0 +1,79 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.login-content{
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navbar-text{
+  font-size: 15px;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.sans-serif{
+  font-family: sans-serif;
+}
+
+.login-text{
+  margin-bottom: 22px;
+}
+
+.login-button{
+  height: 45px;
+  width: 100%;
+}
+
+.icon{
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+}
+
+.card-product{
+  height: 100%;
+  width: 300px;
+}
+
+.card-product{
+  height: 100%;
+  width: 300px;
+}
+
+.card-product-container{
+  padding: 20px;
+}
+
+.card-product img{
+  display: block;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.checked{
+  color: orange;
+}
+
+.card-reviews{
+  text-align: right;
+}
+
+.card-product-footer{
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+}
